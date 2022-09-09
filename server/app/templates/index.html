@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Understanding display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+  </head>
+  <body>
+    <div class="content">
+      <div class="menu-container" onmouseleave="closeMenu()">
+        <div class="menu-bar">
+          <img class="chart-icon" src="{{ url_for('static', filename='src/bar-chart.png') }}" alt="">
+          <div class="btn-container" onmouseover="openMenu()">
+            <img class="nav-icon" src="{{ url_for('static', filename='src/snapshot.png') }}" alt="">
+          </div>
+        </div>
+        <div class="flowing-container">
+          <div class="flowing-container-content">
+            <p id="admin-heading">Admin</p>
+            <p id="dash-section">DASHBOARD</p>
+            <div id="dash-section-overview-list-item" class="list-item">
+              <span id="overview-selected"></span>
+              <p id="dash-section-overview">GPU</p>
+            </div>
+            <div class="list-item">
+              <p id="dash-section-network">Network graph</p>
+            </div>
+            <div class="list-item">
+              <p id="dash-section-disk-usage">Disk usage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overview-dashboard">
+        <p id="dash-section-overview-heading">GPU</p>
+        <div class="dash-section-overview-content">
+          <div id="gpu-temp-graph" class="dash-section-overview-graph-with-btn">
+            <div class="dash-gpu-temperature-graph-title-container">
+              <p id="dash-gpu-temperature-graph-title">Core temperature</p>
+            </div>
+            <button type="button" name="button" class="date-select-btn" id="date-select-1m">1 M</button>
+            <button type="button" name="button" class="date-select-btn" id="date-select-5m">5 M</button>
+            <button type="button" name="button" class="date-select-btn" id="date-select-1h">1 H</button>
+            <button type="button" name="button" class="date-select-btn" id="date-select-3h">3 H</button>
+            <div id="first-graph" class="graph"></div>
+          </div>
+          <div id="second-graph" class="dash-section-overview-graph"></div>
+          <div id="third-graph" class="dash-section-overview-graph"></div>
+          <div id="fourth-graph" class="dash-section-overview-graph"></div>
+        </div>
+      </div>
+    <script src="{{ url_for('static', filename='scripts/openFloatingMenu.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='scripts/charts.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  </body>
+</html>

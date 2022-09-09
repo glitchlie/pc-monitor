@@ -1,0 +1,8 @@
+connection:
+  address: server_address
+  port: server_port
+  timeout: 10
+transmission:
+  interval: 1
+client:
+  name: "nick_pc"

@@ -1,0 +1,7 @@
+server:
+  address: server_address
+  port: server_port
+  max-connections: 1
+  connection-timeout: 10
+rabbitmq:
+  address: pika_server_address
